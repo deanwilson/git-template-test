@@ -36,6 +36,17 @@ You can change the paths above as long as you do it consistently.
 
 TODO: what happens if you specify two git template dirs?
 
+### Pre-commit configuration
+
+The base expected `pre-commit` configuration will be present in every new repository created using
+the GDS template TODO
+[creating a template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-template-repository).
+
+TODO: there will need to be out of band management to ensure the pre-
+commit config can be updated to suit new requirements.
+
+TODO: merge any existing pre-commit configs with the new defaults.
+
 ### Testing the hooks
 
 This example shows how the hooks can be invoked and their output viewed.
