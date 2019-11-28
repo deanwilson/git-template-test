@@ -6,7 +6,8 @@ Test repo for experiments in Git Templates
 We would like to ensure all our repositories have certain hooks enabled
 and run via `pre-commit` for every commit. This repo can be used as a
 git template directory to ensure engineers only have to install the
-tooling once in a central place rather than for every repo they clone.
+tooling once in a central place rather than for every repo they `clone`
+or `init`.
 
 ## Installation and configuration
 
