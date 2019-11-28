@@ -113,7 +113,8 @@ way to ensure they are present on each engineers machine.
     Trim Trailing Whitespace............................................Failed
     ... snip ...
 
-TODO: Does this add to the hooks in a repo or replace them?
+If you set this option it currently (as of git 2.19) prevents any other
+hooks defined inside `.git/hooks` from running.
 
 ## Author
 
