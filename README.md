@@ -32,7 +32,8 @@ Configure `git` to use this template as the basis for all cloned repos:
 
     git config --global init.templatedir ~/gds/git-template
 
-You can change the paths above as long as you do it consistently.
+You can change the paths above to suit your local directory structure as
+long as you do it in each command.
 
 TODO: what happens if you specify two git template dirs?
 
@@ -67,6 +68,20 @@ hopefully cause the hook to abort the commit. First we add some trailing whitesp
 If the hooks are working the commit should abort and display a message including:
 
         Trim Trailing Whitespace.....................Failed
+
+### Warnings and downsides
+
+Once you add `pre-commit` to your git template any repositories that do not contain
+a `.pre-commit-config.yaml` file will raise a warning when you attempt to perform a commit.
+
+    $ git commit -v README.md
+    No .pre-commit-config.yaml file was found
+    - To temporarily silence this, run `PRE_COMMIT_ALLOW_NO_CONFIG=1 git ...`
+
+The willingness to accept this warning is a trade off that will have to
+be discussed. On a more positive note the intrusive nature of thie
+message means people will be incentivied to add `pre-commit`
+configuration to their repositories quite quickly.
 
 ## Author
 
