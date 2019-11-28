@@ -12,7 +12,8 @@ tooling once in a central place rather than for every repo they clone.
 
 ### Installing requirements and enabling the template
 
-TODO: nice bit about installing pre-commit. Most people here use OSX anyway.
+Installing [pre-commit](https://pre-commit.com/) can be done in a number of ways and
+is explained on the [installation page](https://pre-commit.com/#install)
 
 These steps only need to be executed once per developer, per machine,
 and should ensure all the repositories you clone benefit from the
