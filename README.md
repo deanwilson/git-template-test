@@ -6,7 +6,8 @@ Test repo for experiments in Git Templates
 We would like to ensure all our repositories have certain hooks enabled
 and run via `pre-commit` for every commit. This repo can be used as a
 git template directory to ensure engineers only have to install the
-tooling once in a central place rather than for every repo they clone.
+tooling once in a central place rather than for every repo they `clone`
+or `init`.
 
 ## Installation and configuration
 
@@ -65,6 +66,7 @@ You can now make a `pre-commit` violating change to the code base and
 hopefully cause the hook to abort the commit. First we add some trailing whitespace
 
     echo "   " >> bin/run-neo-docker.sh
+    git commit -v bin/run-neo-docker.sh
 
 If the hooks are working the commit should abort and display a message including:
 
@@ -83,6 +85,35 @@ The willingness to accept this warning is a trade off that will have to
 be discussed. On a more positive note the intrusive nature of thie
 message means people will be incentivied to add `pre-commit`
 configuration to their repositories quite quickly.
+
+## Alternatives
+
+Instead of using a template directory it's possible to specify a
+directory containing the hooks to run and have your hooks managed
+centrally rather than under the `.git/hooks` directory inside the repo.
+This requires you to manage the actual hooks themselves in some other
+way to ensure they are present on each engineers machine.
+
+    cd /tmp
+    rm -rf organisation-graph
+    git clone https://github.com/deanwilson/git-template-test.git ~/gds/git-template
+
+    ls -alh organisation-graph/.git/hooks/pre-commit
+    ls: organisation-graph/.git/hooks/pre-commit: No such file or directory
+
+    # set the global hooks path, assumes you have added the hook config to it
+    git config --global core.hooksPath $HOME/gds/git-hooks
+
+    cd organisation-graph
+
+    echo "   " >> bin/run-neo-docker.sh
+    git commit -v bin/run-neo-docker.sh
+
+    ... snip ...
+    Trim Trailing Whitespace............................................Failed
+    ... snip ...
+
+TODO: Does this add to the hooks in a repo or replace them?
 
 ## Author
 
