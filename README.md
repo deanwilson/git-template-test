@@ -12,7 +12,8 @@ tooling once in a central place rather than for every repo they clone.
 
 ### Installing requirements and enabling the template
 
-TODO: nice bit about installing pre-commit. Most people here use OSX anyway.
+Installing [pre-commit](https://pre-commit.com/) can be done in a number of ways and
+is explained on the [installation page](https://pre-commit.com/#install)
 
 These steps only need to be executed once per developer, per machine,
 and should ensure all the repositories you clone benefit from the
@@ -28,14 +29,14 @@ Clone this repo to your local machine:
     mkdir -p ~/gds
     git clone https://github.com/deanwilson/git-template-test.git ~/gds/git-template
 
-Configure `git` to use this template as the basis for all cloned repos:
+Configure `git` to use this template as the basis for all cloned repos.
+You can only have one template directory specified so setting this will
+remove any custom value you have already assigned:
 
     git config --global init.templatedir ~/gds/git-template
 
 You can change the paths above to suit your local directory structure as
 long as you do it in each command.
-
-TODO: what happens if you specify two git template dirs?
 
 ### Pre-commit configuration
 
