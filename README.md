@@ -28,14 +28,14 @@ Clone this repo to your local machine:
     mkdir -p ~/gds
     git clone https://github.com/deanwilson/git-template-test.git ~/gds/git-template
 
-Configure `git` to use this template as the basis for all cloned repos:
+Configure `git` to use this template as the basis for all cloned repos.
+You can only have one template directory specified so setting this will
+remove any custom value you have already assigned:
 
     git config --global init.templatedir ~/gds/git-template
 
 You can change the paths above to suit your local directory structure as
 long as you do it in each command.
-
-TODO: what happens if you specify two git template dirs?
 
 ### Pre-commit configuration
 
